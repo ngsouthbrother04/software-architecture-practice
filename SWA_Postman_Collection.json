@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "b5a3c1d2-e4f5-4a6b-8c7d-9e0f1a2b3c4d",
+		"name": "SWA Microservices Demo",
+		"description": "Collection for Order, Restaurant, and Payment services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Order Service",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"customer-123\",\n    \"totalAmount\": 99.99,\n    \"paymentMethod\": \"CREDIT_CARD\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"orders"
+							]
+						},
+						"description": "Create a new order which triggers the order.created event"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/orders/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"orders",
+								"1"
+							]
+						},
+						"description": "Retrieve order details by ID"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restaurant Service",
+			"item": [
+				{
+					"name": "Get All Approvals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/approvals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"approvals"
+							]
+						},
+						"description": "Get history of all auto-approved orders"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Approval by Order ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/approvals/order/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"approvals",
+								"order",
+								"1"
+							]
+						},
+						"description": "Check approval status for a specific order"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
