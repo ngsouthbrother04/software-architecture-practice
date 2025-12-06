@@ -41,10 +41,6 @@ graph LR
 
 ### Quick Start
 1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/swa-microservices.git
-   cd swa-microservices
-   ```
 
 2. **Start the stack**
    ```bash
